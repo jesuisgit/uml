@@ -4,15 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Crie sua conta - Hellow</title>
-  <link rel="stylesheet" href="cadastro.css"> 
+  <link rel="stylesheet" href="cadastro.css">
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
 </head>
 <body>
   <div class="form-container">
     <p class="voltar"><a href="login.html">Inicie sessão</a> > Criar uma conta</p>
 
-    <form class="form-box" id="form" onsubmit="return validarFormulario()">
+    <form class="form-box" id="cadastroForm" onsubmit="return validarCadastro(event)">
       <h2>Crie sua conta</h2>
 
       <label for="email">E-MAIL</label>
@@ -22,27 +21,55 @@
         <span class="erro" id="erro-email">Este campo é obrigatório</span>
       </div>
 
-      <div class="captcha">
-        <input type="checkbox" id="captcha">
-        <label for="captcha">Não sou um robô</label>
-        <img src="https://www.google.com/recaptcha/about/images/reCAPTCHA-logo.png" alt="reCAPTCHA" class="captcha-img">
+      <label for="senha">SENHA</label>
+      <div class="input-wrapper">
+        <input type="password" id="senha" name="senha" placeholder="Crie uma senha segura" required>
       </div>
 
+      <!-- reCAPTCHA oficial -->
+      <div class="g-recaptcha" data-sitekey="6LfP12YrAAAAAMbSUkMR25nouVHS1pi8qG_ocgzw"></div><br>
+
       <button type="submit" class="next-btn">Seguinte</button>
+      <p id="mensagemErro" style="color:red; font-size:0.9em;"></p>
     </form>
   </div>
 
   <script>
-    function validarFormulario() {
-      const email = document.getElementById("email");
-      const erro = document.getElementById("erro-email");
-      if (!email.value) {
-        erro.style.display = "block";
-        email.classList.add("erro-input");
+    function validarCadastro(event) {
+      event.preventDefault();
+
+      const email = document.getElementById("email").value.trim();
+      const senha = document.getElementById("senha").value.trim();
+      const erroEmail = document.getElementById("erro-email");
+      const erroGeral = document.getElementById("mensagemErro");
+      const recaptchaResponse = grecaptcha.getResponse();
+
+      const emailExistente = "teste@gmail.com";
+      const regexSenha = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).{6,}$/;
+
+      if (!email) {
+        erroEmail.style.display = "block";
+        return false;
+      } else {
+        erroEmail.style.display = "none";
+      }
+
+      if (email === emailExistente) {
+        erroGeral.textContent = "Este e-mail já está cadastrado.";
         return false;
       }
-      erro.style.display = "none";
-      email.classList.remove("erro-input");
+
+      if (!regexSenha.test(senha)) {
+        erroGeral.textContent = "A senha deve conter letra maiúscula, número e caractere especial.";
+        return false;
+      }
+
+      if (recaptchaResponse.length === 0) {
+        erroGeral.textContent = "Por favor, confirme que você não é um robô.";
+        return false;
+      }
+
+      alert("Cadastro realizado com sucesso!");
       return true;
     }
   </script>
