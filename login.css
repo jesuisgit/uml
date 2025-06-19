@@ -1,0 +1,112 @@
+/* login.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f4f6f8;
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+header {
+  background-color: #004aad;
+  color: #fff;
+  padding: 20px 0;
+  width: 100%;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  margin: 0;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  margin-top: 40px;
+}
+
+.login-box {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 300px;
+}
+
+.login-box h2 {
+  margin-bottom: 30px;
+  font-size: 1.5rem;
+  color: #222;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  background-color: white;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.facebook {
+  border: 1px solid #1877f2;
+}
+
+.google {
+  border: 1px solid #ccc;
+}
+
+.email-btn {
+  border: 1px solid #7b2cbf;
+  color: #7b2cbf;
+}
+
+.signup-btn {
+  background-color: #7b2cbf;
+  text-decoration: white;
+  border: none;
+}
+
+.ajuda {
+  margin-top: 15px;
+  font-size: 0.9rem;
+}
+
+.ajuda a {
+  color:rgb(31, 32, 32);
+  text-decoration: none;
+}

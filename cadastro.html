@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crie sua conta - Hellow</title>
+  <link rel="stylesheet" href="cadastro.css"> 
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+</head>
+<body>
+  <div class="form-container">
+    <p class="voltar"><a href="login.html">Inicie sessão</a> > Criar uma conta</p>
+
+    <form class="form-box" id="form" onsubmit="return validarFormulario()">
+      <h2>Crie sua conta</h2>
+
+      <label for="email">E-MAIL</label>
+      <div class="input-wrapper">
+        <input type="email" id="email" name="email" placeholder="meunome@exemplo.com" required>
+        <span class="icon">@</span>
+        <span class="erro" id="erro-email">Este campo é obrigatório</span>
+      </div>
+
+      <div class="captcha">
+        <input type="checkbox" id="captcha">
+        <label for="captcha">Não sou um robô</label>
+        <img src="https://www.google.com/recaptcha/about/images/reCAPTCHA-logo.png" alt="reCAPTCHA" class="captcha-img">
+      </div>
+
+      <button type="submit" class="next-btn">Seguinte</button>
+    </form>
+  </div>
+
+  <script>
+    function validarFormulario() {
+      const email = document.getElementById("email");
+      const erro = document.getElementById("erro-email");
+      if (!email.value) {
+        erro.style.display = "block";
+        email.classList.add("erro-input");
+        return false;
+      }
+      erro.style.display = "none";
+      email.classList.remove("erro-input");
+      return true;
+    }
+  </script>
+</body>
+</html>
