@@ -1,21 +1,32 @@
+/* Mantém a identidade do site */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   background-color: #f1f3f4;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
 }
 
+/* Herda o header do style.css, nada precisa mudar nele aqui */
+
+/* Centraliza o formulário dentro do fluxo da página */
+main {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+  min-height: calc(100vh - 160px); /* 100vh - header + footer */
+  box-sizing: border-box;
+}
+
+/* Caixa do formulário */
 .form-container {
   background: white;
   padding: 30px;
-  width: 380px;
+  width: 100%;
+  max-width: 400px;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Navegação superior */
 .voltar {
   color: #5f6368;
   font-size: 14px;
@@ -27,11 +38,13 @@ body {
   text-decoration: none;
 }
 
+/* Título do formulário */
 .form-box h2 {
   margin: 0 0 20px;
   font-weight: 500;
 }
 
+/* Labels dos campos */
 label {
   display: block;
   font-size: 12px;
@@ -40,6 +53,7 @@ label {
   letter-spacing: 1px;
 }
 
+/* Estilo dos campos com ícones */
 .input-wrapper {
   position: relative;
   margin-bottom: 20px;
@@ -56,7 +70,6 @@ input[type="password"] {
   box-sizing: border-box;
 }
 
-
 input[type="email"].erro-input {
   border-color: #b3261e;
   background-color: #fdd;
@@ -71,6 +84,7 @@ input[type="email"].erro-input {
   font-size: 16px;
 }
 
+/* Mensagens de erro */
 .erro {
   display: none;
   color: white;
@@ -92,34 +106,4 @@ input[type="email"].erro-input {
   right: 10px;
   border-width: 6px;
   border-style: solid;
-  border-color: #b3261e transparent transparent transparent;
-}
-
-.captcha {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: 20px 0;
-}
-
-.captcha-img {
-  height: 30px;
-  margin-left: auto;
-}
-
-.next-btn {
-  width: 100%;
-  padding: 12px;
-  background-color: #5f2dc4;
-  color: white;
-  font-weight: bold;
-  border: none;
-  border-radius: 24px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.next-btn:hover {
-  background-color: #4e22a7;
-}
+  border-color: #

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resultados de Busca - Hellow</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .resultados-container {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    
+    .resultado-title {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #2e0071;
+    }
+    
+    .opcoes-viagem {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+    
+    .opcao-viagem {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .viagem-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .viagem-detalhes {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+    
+    .trecho {
+      flex: 1;
+      padding: 0 15px;
+    }
+    
+    .trecho:first-child {
+      padding-left: 0;
+    }
+    
+    .trecho:last-child {
+      padding-right: 0;
+    }
+    
+    .trecho h3 {
+      margin-top: 0;
+      color: #2e0071;
+    }
+    
+    .trecho-info {
+      margin-top: 8px;
+      color: #555;
+    }
+    
+    .viagem-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid #eee;
+    }
+    
+    .preco {
+      font-size: 24px;
+      font-weight: bold;
+      color: #e60000;
+    }
+    
+    .btn-seguinte {
+      background-color: #004aad;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    
+    .btn-voltar {
+      display: inline-block;
+      margin-top: 20px;
+      color: #2e0071;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Hellow</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="passagens.html">Passagens</a></li>
+          <li><a href="#buscar">Reservas</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="resultados-container">
+      <h2 class="resultado-title">Resultados para: São Paulo (GNU) → Salvador (SSA)</h2>
+      
+      <div class="opcoes-viagem">
+        <!-- Opção 1 -->
+        <div class="opcao-viagem">
+          <div class="viagem-header">
+            <h3>COL. Gel</h3>
+          </div>
+          <div class="viagem-detalhes">
+            <div class="trecho">
+              <h3>IDA</h3>
+              <div class="trecho-info">GNU - SSA</div>
+              <div class="trecho-info">Sáb. 28 ago. 2025</div>
+              <div class="trecho-info">08:45 - Direto</div>
+            </div>
+            <div class="trecho">
+              <h3>VOLTA</h3>
+              <div class="trecho-info">SSA - GNU</div>
+              <div class="trecho-info">Qua. 4 set. 2025</div>
+              <div class="trecho-info">23:00 - Direto</div>
+            </div>
+          </div>
+          <div class="viagem-footer">
+            <div class="duracao">Ida e volta: 7 dias</div>
+            <div class="preco">R$ 827</div>
+            <button class="btn-seguinte">Seguinte</button>
+          </div>
+        </div>
+        
+        <!-- Opção 2 -->
+        <div class="opcao-viagem">
+          <div class="viagem-header">
+            <h3>COL. Gel</h3>
+          </div>
+          <div class="viagem-detalhes">
+            <div class="trecho">
+              <h3>IDA</h3>
+              <div class="trecho-info">GNU - SSA</div>
+              <div class="trecho-info">Qui. 4 set. 2025</div>
+              <div class="trecho-info">08:45 - Direto</div>
+            </div>
+            <div class="trecho">
+              <h3>VOLTA</h3>
+              <div class="trecho-info">SSA - GNU</div>
+              <div class="trecho-info">Dom. 8 ago. 2025</div>
+              <div class="trecho-info">08:45 - Direto</div>
+            </div>
+          </div>
+          <div class="viagem-footer">
+            <div class="duracao">Ida e volta: 8 dias</div>
+            <div class="preco">R$ 827</div>
+            <button class="btn-seguinte">Seguinte</button>
+          </div>
+        </div>
+        
+        <!-- Opção 3 -->
+        <div class="opcao-viagem">
+          <div class="viagem-header">
+            <h3>COL. Gel</h3>
+          </div>
+          <div class="viagem-detalhes">
+            <div class="trecho">
+              <h3>IDA</h3>
+              <div class="trecho-info">GNU - SSA</div>
+              <div class="trecho-info">Qui. 4 set. 2025</div>
+              <div class="trecho-info">08:00 - Direto</div>
+            </div>
+            <div class="trecho">
+              <h3>VOLTA</h3>
+              <div class="trecho-info">SSA - GNU</div>
+              <div class="trecho-info">Ter. 9 dez. 2025</div>
+              <div class="trecho-info">15:20 - Direto</div>
+            </div>
+          </div>
+          <div class="viagem-footer">
+            <div class="duracao">Ida e volta: 6 dias</div>
+            <div class="preco">R$ 830</div>
+            <button class="btn-seguinte">Seguinte</button>
+          </div>
+        </div>
+        
+        <!-- Opção 4 -->
+        <div class="opcao-viagem">
+          <div class="viagem-header">
+            <h3>COL. Gel</h3>
+          </div>
+          <div class="viagem-detalhes">
+            <div class="trecho">
+              <h3>IDA</h3>
+              <div class="trecho-info">GNU - SSA</div>
+              <div class="trecho-info">Qui. 31 jul. 2025</div>
+              <div class="trecho-info">08:45 - Direto</div>
+            </div>
+            <div class="trecho">
+              <h3>VOLTA</h3>
+              <div class="trecho-info">SSA - GNU</div>
+              <div class="trecho-info">Dom. 11 ago. 2025</div>
+              <div class="trecho-info">08:45 - Direto</div>
+            </div>
+          </div>
+          <div class="viagem-footer">
+            <div class="duracao">Ida e volta: 11 dias</div>
+            <div class="preco">R$ 992</div>
+            <button class="btn-seguinte">Seguinte</button>
+          </div>
+        </div>
+        
+        <!-- Opção 5 -->
+        <div class="opcao-viagem">
+          <div class="viagem-header">
+            <h3>COL. Gel</h3>
+          </div>
+          <div class="viagem-detalhes">
+            <div class="trecho">
+              <h3>IDA</h3>
+              <div class="trecho-info">GNU - SSA</div>
+              <div class="trecho-info">Ter. 12 ago. 2025</div>
+              <div class="trecho-info">18:00 - 1 parada</div>
+            </div>
+            <div class="trecho">
+              <h3>VOLTA</h3>
+              <div class="trecho-info">SSA - GNU</div>
+              <div class="trecho-info">Dom. 17 ago. 2025</div>
+              <div class="trecho-info">05:55 - 1 parada</div>
+            </div>
+          </div>
+          <div class="viagem-footer">
+            <div class="duracao">Ida e volta: 5 dias</div>
+            <div class="preco">R$ 1.159</div>
+            <button class="btn-seguinte">Seguinte</button>
+          </div>
+        </div>
+      </div>
+      
+      <a href="index.html" class="btn-voltar">← Voltar e fazer nova busca</a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Hellow - Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+ <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".btn-seguinte").forEach(btn => {
+      btn.addEventListener("click", function () {
+        const opcao = this.closest(".opcao-viagem");
+        localStorage.setItem("reservaConfirmada", opcao.outerHTML);
+        window.location.href = "reservas.html";
+      });
+    });
+  });
+</script>
+
+
+
+
+</body>
+</html>

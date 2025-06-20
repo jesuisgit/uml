@@ -4,35 +4,62 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Crie sua conta - Hellow</title>
-  <link rel="stylesheet" href="cadastro.css">
+  <link rel="stylesheet" href="style.css"> <!-- para header/footer -->
+  <link rel="stylesheet" href="cadastro.css"> <!-- para estilo da tela de cadastro -->
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
-  <div class="form-container">
-    <p class="voltar"><a href="login.html">Inicie sessão</a> > Criar uma conta</p>
+  <!-- HEADER do index -->
+  <header>
+    <div class="container">
+      <h1>Hellow</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="passagens.html">Passagens</a></li>
+          <li><a href="index.html#buscar">Reservas</a></li>
+          <li><a href="index.html#contato">Contato</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <form class="form-box" id="cadastroForm" onsubmit="return validarCadastro(event)">
-      <h2>Crie sua conta</h2>
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main>
+    <div class="form-container">
+      <p class="voltar"><a href="login.html">Inicie sessão</a> > Criar uma conta</p>
 
-      <label for="email">E-MAIL</label>
-      <div class="input-wrapper">
-        <input type="email" id="email" name="email" placeholder="meunome@exemplo.com" required>
-        <span class="icon">@</span>
-        <span class="erro" id="erro-email">Este campo é obrigatório</span>
-      </div>
+      <form class="form-box" id="cadastroForm" onsubmit="return validarCadastro(event)">
+        <h2>Crie sua conta</h2>
 
-      <div class="input-wrapper">
-       <input type="password" id="senha" name="senha" placeholder="Crie uma senha segura" required>
-      </div>
+        <label for="email">E-MAIL</label>
+        <div class="input-wrapper">
+          <input type="email" id="email" name="email" placeholder="meunome@exemplo.com" required>
+          <span class="icon">@</span>
+          <span class="erro" id="erro-email">Este campo é obrigatório</span>
+        </div>
 
+        <label for="senha">SENHA</label>
+        <div class="input-wrapper">
+          <input type="password" id="senha" name="senha" placeholder="Crie uma senha segura" required>
+          <span class="icon"></span>
+        </div>
 
-      <!-- reCAPTCHA oficial -->
-      <div class="g-recaptcha" data-sitekey="6LfP12YrAAAAAMbSUkMR25nouVHS1pi8qG_ocgzw"></div><br>
+        <div class="g-recaptcha" data-sitekey="SUA_SITE_KEY_AQUI"></div><br>
 
-      <button type="submit" class="next-btn">Seguinte</button>
-      <p id="mensagemErro" style="color:red; font-size:0.9em;"></p>
-    </form>
-  </div>
+        <button type="submit" class="next-btn">Seguinte</button>
+        <p id="mensagemErro" style="color:red; font-size:0.9em;"></p>
+      </form>
+    </div>
+  </main>
+
+  <!-- FOOTER do index -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Hellow - Todos os direitos reservados.</p>
+    </div>
+  </footer>
 
   <script>
     function validarCadastro(event) {

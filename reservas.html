@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Reserva Confirmada - Hellow</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .reserva-container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 30px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .reserva-container h2 {
+      color: #004aad;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .mensagem {
+      background-color: #e6f7ff;
+      border: 1px solid #b3e0ff;
+      padding: 15px;
+      margin-bottom: 20px;
+      text-align: center;
+      font-weight: bold;
+      color: #004aad;
+    }
+    .acoes-reserva {
+      text-align: center;
+      margin-top: 30px;
+    }
+    .btn-checkin,
+    .btn-cancelar {
+      padding: 10px 20px;
+      margin: 5px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .btn-checkin {
+      background-color: #28a745;
+      color: white;
+    }
+    .btn-cancelar {
+      background-color: #dc3545;
+      color: white;
+    }
+    .opcao-viagem {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  margin-top: 20px;
+}
+.viagem-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+.viagem-detalhes {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.trecho {
+  flex: 1;
+  padding: 0 15px;
+}
+.trecho:first-child {
+  padding-left: 0;
+}
+.trecho:last-child {
+  padding-right: 0;
+}
+.trecho h3 {
+  margin-top: 0;
+  color: #2e0071;
+}
+.trecho-info {
+  margin-top: 8px;
+  color: #555;
+}
+.viagem-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+.preco {
+  font-size: 24px;
+  font-weight: bold;
+  color: #e60000;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Hellow</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="passagens.html">Passagens</a></li>
+          <li><a href="reservas.html">Reservas</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="reserva-container">
+      <h2>Passagem Reservada com Sucesso!</h2>
+      <div class="mensagem">
+        Obrigado por escolher a Hellow! Aqui estão os detalhes da sua viagem:
+      </div>
+<div id="detalhes-reserva" class="opcao-viagem"></div>
+
+      <div class="acoes-reserva">
+        <button onclick="fazerCheckin()" class="btn-checkin">Fazer Check-in</button>
+        <button onclick="cancelarReserva()" class="btn-cancelar">Cancelar Reserva</button>
+        <p id="mensagemAcao" style="margin-top: 15px; font-weight: bold;"></p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Hellow - Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+<script>
+  const container = document.getElementById("detalhes-reserva");
+  const mensagem = document.getElementById("mensagemAcao");
+
+  let detalhes = localStorage.getItem("reservaConfirmada");
+
+  if (detalhes) {
+    // Corrigido: Remove botão "Seguinte"
+    detalhes = detalhes.replace(/<button.*?>.*?<\/button>/gi, "");
+    container.innerHTML = detalhes;
+  } else {
+    container.innerHTML = "<p style='color:red;'>Nenhuma reserva encontrada.</p>";
+    document.querySelector(".acoes-reserva").style.display = "none";
+  }
+
+  function fazerCheckin() {
+    mensagem.style.color = "green";
+    mensagem.textContent = "✅ Check-in realizado com sucesso!";
+  }
+
+  function cancelarReserva() {
+    localStorage.removeItem("reservaConfirmada");
+    container.innerHTML = "<p style='color:red;'>Reserva cancelada com sucesso.</p>";
+    mensagem.textContent = "";
+    document.querySelector(".acoes-reserva").style.display = "none";
+  }
+</script>
+
+</body>
+</html>
