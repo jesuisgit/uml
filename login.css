@@ -17,7 +17,21 @@ header {
   padding: 20px 0;
   width: 100%;
 }
+.logo-img {
+  height: 90px;
+  margin-right: 10px;
+}
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
 
+.logo-text {
+  font-size: 1.8em;
+  color: #ffffff;
+  font-weight: bold;
+}
 .container {
   width: 90%;
   max-width: 1200px;
@@ -109,4 +123,13 @@ button {
 .ajuda a {
   color:rgb(31, 32, 32);
   text-decoration: none;
+}
+
+footer {
+  background-color: #004aad;
+  color: white;
+    width: 100%;
+
+  text-align: center;
+  padding: 15px 0;
 }
