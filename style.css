@@ -36,6 +36,7 @@ header {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
@@ -46,11 +47,22 @@ nav ul {
   padding: 0;
   display: flex;
   gap: 15px;
+  flex-wrap: wrap;
 }
 
 nav a {
   color: #fff;
   text-decoration: none;
+}
+
+/* Banner de Ofertas */
+.ofertas-banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* Search Box */
@@ -168,7 +180,7 @@ nav a {
 
 /* Seções restantes */
 .ofertas {
-  padding: 20px 20px;
+  padding: 20px;
   background-color: #fff;
   text-align: center;
 }
@@ -213,7 +225,8 @@ nav a {
 }
 
 .hero {
-  background: url('https://source.unsplash.com/1600x500/?travel') center/cover;
+  background: url('https://source.unsplash.com/1600x500/?travel') center/cover no-repeat;
+  width: 100%;
   height: 400px;
   display: flex;
   align-items: center;
