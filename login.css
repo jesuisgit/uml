@@ -1,5 +1,4 @@
-/* login.css */
-
+/* Reset e estrutura básica */
 body {
   margin: 0;
   padding: 0;
@@ -7,20 +6,22 @@ body {
   font-family: 'Arial', sans-serif;
   display: flex;
   flex-direction: column;
-  align-items: center;
   min-height: 100vh;
 }
 
+/* Header */
 header {
   background-color: #004aad;
   color: #fff;
   padding: 20px 0;
   width: 100%;
 }
+
 .logo-img {
   height: 90px;
   margin-right: 10px;
 }
+
 .logo-link {
   display: flex;
   align-items: center;
@@ -32,6 +33,7 @@ header {
   color: #ffffff;
   font-weight: bold;
 }
+
 .container {
   width: 90%;
   max-width: 1200px;
@@ -39,10 +41,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-h1 {
-  margin: 0;
+  flex-wrap: wrap;
 }
 
 nav ul {
@@ -51,6 +50,7 @@ nav ul {
   padding: 0;
   display: flex;
   gap: 15px;
+  flex-wrap: wrap;
 }
 
 nav a {
@@ -58,21 +58,24 @@ nav a {
   text-decoration: none;
 }
 
+/* Área de login */
 .login-container {
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex: 1;
-  margin-top: 40px;
+  margin-top: 50px;
+  padding: 20px;
 }
 
 .login-box {
   background-color: #fff;
   padding: 40px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   text-align: center;
-  width: 300px;
+  width: 100%;
+  max-width: 360px;
 }
 
 .login-box h2 {
@@ -87,49 +90,88 @@ button {
   justify-content: center;
   gap: 10px;
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   margin: 10px 0;
   border: 1px solid #ccc;
   border-radius: 25px;
   background-color: white;
   cursor: pointer;
-  font-size: 0.95rem;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+
+button img {
+  height: 20px;
 }
 
 .facebook {
-  border: 1px solid #1877f2;
+  border-color: #1877f2;
+  color: #1877f2;
 }
 
 .google {
-  border: 1px solid #ccc;
+  border-color: #ccc;
+  color: #333;
 }
 
 .email-btn {
-  border: 1px solid #7b2cbf;
+  border-color: #7b2cbf;
   color: #7b2cbf;
 }
 
 .signup-btn {
   background-color: #7b2cbf;
-  text-decoration: white;
+  color: white;
+  font-weight: bold;
   border: none;
+  margin-top: 20px;
+}
+
+.signup-btn a {
+  color: white;
+  text-decoration: none;
+  width: 100%;
+  display: block;
+}
+
+.signup-btn:hover {
+  background-color: #5a1e99;
 }
 
 .ajuda {
-  margin-top: 15px;
+  margin-top: 20px;
   font-size: 0.9rem;
 }
 
 .ajuda a {
-  color:rgb(31, 32, 32);
+  color: rgb(31, 32, 32);
   text-decoration: none;
 }
 
 footer {
   background-color: #004aad;
   color: white;
-    width: 100%;
-
   text-align: center;
   padding: 15px 0;
+  margin-top: auto;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  .login-box {
+    padding: 25px;
+  }
+
+  button {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+
+  .logo-text {
+    font-size: 1.4em;
+  }
+
+  .logo-img {
+    height: 70px;
+  }
 }
