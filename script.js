@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   const cidades = [
     "São Paulo", "Salvador", "São Francisco", "Santos", "Recife",
     "Fortaleza", "Florianópolis", "Foz do Iguaçu", "Rio de Janeiro", "Belo Horizonte"
@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const input = document.getElementById(inputId);
     const sugestoes = document.getElementById(sugestoesId);
 
-    input.addEventListener("input", function() {
+    input.addEventListener("input", function () {
       const valor = input.value.toLowerCase();
       sugestoes.innerHTML = "";
 
@@ -42,8 +42,8 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     });
 
-    // Mostrar sugestões ao focar no campo (opcional)
-    input.addEventListener("focus", function() {
+    // Mostrar sugestões ao focar no campo
+    input.addEventListener("focus", function () {
       if (input.value && sugestoes.children.length > 0) {
         sugestoes.style.display = "block";
       }
@@ -53,29 +53,28 @@ document.addEventListener("DOMContentLoaded", function() {
   autocomplete("origem", "sugestoes-origem");
   autocomplete("destino", "sugestoes-destino");
 
-  // Form submission handler
-  document.querySelector(".busca-form").addEventListener("submit", function(event) {
+  // Ao enviar o formulário, redireciona
+  document.querySelector(".busca-form").addEventListener("submit", function (event) {
     event.preventDefault();
-    alert("Busca realizada com sucesso!");
-    // Aqui você pode adicionar a lógica real de busca
+
+    const origem = document.getElementById("origem").value || "São Paulo (GNU)";
+    const destino = document.getElementById("destino").value || "Salvador (SSA)";
+
+    // Aqui você pode armazenar ou enviar os dados
+    console.log("Origem:", origem);
+    console.log("Destino:", destino);
+
+    // Redireciona para os resultados
+    window.location.href = "resultados.html";
   });
-});
 
-
-  // Captura os valores dos campos
-  const origem = document.getElementById("origem").value || "São Paulo (GNU)";
-  const destino = document.getElementById("destino").value || "Salvador (SSA)";
-  
-  // Redireciona para a página de resultados
-  window.location.href = "resultados.html";
-});
-
-<script>
-  document.querySelectorAll(".btn-seguinte").forEach(btn => {
+  // Código da página de pacotes (opcional)
+  const botoesSeguinte = document.querySelectorAll(".btn-seguinte");
+  botoesSeguinte.forEach(btn => {
     btn.addEventListener("click", function () {
       const opcao = this.closest(".opcao-viagem");
       localStorage.setItem("reservaConfirmada", opcao.outerHTML);
       window.location.href = "reservas.html";
     });
   });
-</script>
+});
