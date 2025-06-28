@@ -7,18 +7,17 @@
   <link rel="stylesheet" href="style.css"> <!-- para header/footer -->
   <link rel="stylesheet" href="cadastro.css"> <!-- para estilo da tela de cadastro -->
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <link rel="icon" type="image/png" href="logo.png">
-
+  <link rel="icon" type="image/png" href="logo.png">
 </head>
+
 <body>
   <!-- HEADER do index -->
   <header>
     <div class="container">
       <a href="index.html" class="logo-link">
-      <img src="logo.png" alt="Logo Hellow" class="logo-img">
-      <h1 class="logo-text">Hellow</h1>
-
-    </a>
+        <img src="logo.png" alt="Logo Hellow" class="logo-img">
+        <h1 class="logo-text">Hellow</h1>
+      </a>
       <nav>
         <ul>
           <li><a href="index.html">Início</a></li>
@@ -43,7 +42,7 @@
         <div class="input-wrapper">
           <input type="email" id="email" name="email" placeholder="meunome@exemplo.com" required>
           <span class="icon">@</span>
-          <span class="erro" id="erro-email">Este campo é obrigatório</span>
+          <span class="erro" id="erro-email" style="display:none;">Este campo é obrigatório</span>
         </div>
 
         <label for="senha">SENHA</label>
@@ -52,7 +51,8 @@
           <span class="icon"></span>
         </div>
 
-        <div class="g-recaptcha" data-sitekey="SUA_SITE_KEY_AQUI"></div><br>
+        <!-- Google reCAPTCHA -->
+        <div class="g-recaptcha" data-sitekey="6LeskHArAAAAADDdctQgDmVZXegF_SpIf_RsInOX"></div><br>
 
         <button type="submit" class="next-btn">Seguinte</button>
         <p id="mensagemErro" style="color:red; font-size:0.9em;"></p>
@@ -67,6 +67,7 @@
     </div>
   </footer>
 
+  <!-- Script de validação -->
   <script>
     function validarCadastro(event) {
       event.preventDefault();
